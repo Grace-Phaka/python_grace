@@ -41,28 +41,25 @@
 #     print("ce nombre n'est pas parfait ")
 
 # Nombre d'Amstrong 
-# amst = 0
-# nbre_amst = 0
-# somme = 0
-# nombre = int(input("Entrez un nombre : "))
-# print("\n")
-# amst = nombre
+amst = 0
+nbre_amst = 0
+somme = 0
+nombre = int(input("Entrez un nombre : "))
+print("\n")
+amst = nombre
 
-# while amst > 0:
-#     nbre_amst = amst % 10
-#     somme += nbre_amst ** 3
-#     amst //= 10
+while amst > 0:
+    nbre_amst = amst % 10
+    somme += nbre_amst ** 3
+    amst //= 10
 
-# if nombre == somme:
+if nombre == somme:
         
-#         print(" ce nombre est d'amstrong ")
-# else:
-#         print("Ce nombre n'est pas d'Amstrong")
+        print(" ce nombre est d'amstrong ")
+else:
+        print("Ce nombre n'est pas d'Amstrong")
     
-    
-# Exercice 3
-nombre = int(input("entrez un nombre : "))
-for i in range(0,nombre+1):
+
     
 
   
