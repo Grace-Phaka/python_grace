@@ -1,3 +1,8 @@
+import json
+import os
+
+cur_dir = os.path.dirname(__file__)
+liste_path = os.path.join(cur_dir, "liste.json")
 
 # nombre =" 0 " 
 # while nombre.isdigit() == False and nombre > 5:
@@ -15,6 +20,12 @@ print("\n")
 
 choix_menu = [1, 2, 3, 4, 5]
 print("\n")
+if os.path.exists(liste_path):
+    with open(liste_path, "r") as f:
+        liste = json.load(f)
+        
+else: 
+    liste = []
 
 while True:
     print("\n")
@@ -55,5 +66,7 @@ while True:
         ma_liste.clear()
         print("La liste a été vidée !")
     elif utilisateur == 5: # Quitter le programme 
-        print("Au revoir! ")
-        break
+        with open(liste_path, "w") as f:
+            json.dump(liste, f, indent=2)
+            print("Au revoir! ")
+            break
