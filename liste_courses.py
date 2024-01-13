@@ -2,7 +2,7 @@ import json
 import os
 
 cur_dir = os.path.dirname(__file__)
-liste_path = os.path.join(cur_dir, "liste.json")
+liste_nouvelle = os.path.join(cur_dir, "liste.json")
 
 # nombre =" 0 " 
 # while nombre.isdigit() == False and nombre > 5:
@@ -20,8 +20,8 @@ print("\n")
 
 choix_menu = [1, 2, 3, 4, 5]
 print("\n")
-if os.path.exists(liste_path):
-    with open(liste_path, "r") as f:
+if os.path.exists(liste_nouvelle):
+    with open(liste_nouvelle, "r") as f:
         liste = json.load(f)
         
 else: 
@@ -48,12 +48,12 @@ while True:
       
     elif utilisateur == 2: # Retirer un élément
         
-        element = int(input("Choisir un élément à supprimer dans la liste : "))
+        element = (input("Choisir un élément à supprimer dans la liste : "))
         print(element)
         
         if element in ma_liste:
             
-            ma_liste.pop(element)
+            ma_liste.remove(element)
             
             print(f"L'élément {element} a bien été supprimer à la liste de courses !")
     
@@ -66,7 +66,7 @@ while True:
         ma_liste.clear()
         print("La liste a été vidée !")
     elif utilisateur == 5: # Quitter le programme 
-        with open(liste_path, "w") as f:
+        with open(liste_nouvelle, "w") as f:
             json.dump(liste, f, indent=2)
             print("Au revoir! ")
             break
