@@ -1,4 +1,6 @@
+import json
 from pathlib import Path
+
 
 # affichage du dossier courant
 dossier_courant = Path.cwd()
@@ -28,21 +30,29 @@ michee = exercice_pathlib/"michee.json"
 michee.touch(exist_ok=True)
 print(michee)
 
-# resolution de l'exerice
+# resolution de l'exercice
+
 print("\n")
 
-nom = input("Entrez votre nom svp! : ")
-
-postnom = input("Entrez votre postnom svp! : ")
-
-prenom = input("Entrez votre prenom svp! : ")
-
-avis = input("Donnez votre avis svp! : ")
-
-with open(kilolo,"a", encoding="utf_8") as f:
-    f.write(f" \n Je suis Mr ou Mme {nom} {postnom} {prenom} mon avis est le suivant : {avis} ")
-
-
     
+name = input("Entrez votre nom svp! : ")
 
+post_name = input("Entrez votre postnom svp! : ")
 
+first_name = input("Entrez votre prenom svp! : ")
+
+notice = input("Donnez votre avis svp! : ")
+
+with open (michee, "r") as f:
+    data = json.load(f)
+  
+    dict_info = {"nom ": name, 
+                     "postnom ": post_name,
+                     "prenom": first_name,
+                     "avis": notice
+        }
+    data.append(dict_info)
+        
+with open (michee, "w") as ff:
+        json.dump(dict_info, ff, indent= 4)
+        

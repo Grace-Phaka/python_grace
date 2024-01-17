@@ -42,7 +42,10 @@ avis = input("Donnez votre avis svp! : ")
 with open(kilolo,"a", encoding="utf_8") as f:
     f.write(f" \n Je suis Mr ou Mme {nom} {postnom} {prenom} mon avis est le suivant : {avis} ")
 
+#creation d'un nouveau fichier python
 
-    
+phaka = exercice_pathlib/"phaka.py"
+phaka.touch(exist_ok=True)
+print(phaka)
 
 
